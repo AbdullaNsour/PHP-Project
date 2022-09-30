@@ -23,37 +23,55 @@ if(isset($_POST['submit'])){
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>login</title>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>RegistrationForm_v1 by Colorlib</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
 
-   <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style.css">
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="css/style.css">
+	</head>
 
-</head>
-<body>
-   
-<div class="form-container">
+	<body>
 
-   <form action="" method="post" enctype="multipart/form-data">
-      <h3>login now</h3>
-      <?php
-      if(isset($message)){
-         foreach($message as $message){
-            echo '<div class="message">'.$message.'</div>';
-         }
-      }
-      ?>
-      <input type="email" name="email" placeholder="enter email" class="box" required>
-      <input type="password" name="password" placeholder="enter password" class="box" required>
-      <input type="submit" name="submit" value="login now" class="btn">
-      <p>don't have an account? <a href="register.php">regiser now</a></p>
-   </form>
+		<div class="wrapper" style="background-image: url('images/bg-registration-form-1.jpg');">
+			<div class="inner">
+				<div class="image-holder">
+					<img src="images/rg1.jpg" alt="">
+				</div>
+				<form action="" method="post" enctype="multipart/form-data">
+					<h3>Registration Form</h3>
+					<?php
+					if(isset($message)){
+					   foreach($message as $message){
+						  echo '<div class="message">'.$message.'</div>';
+					   }
+					}
+					?>
 
-</div>
+					<div class="form-wrapper">
+						<input type="text" name="email" placeholder="Email Address" class="form-control" required>
+						<i class="zmdi zmdi-email"></i>
+					</div>
 
-</body>
+					<div class="form-wrapper">
+						<input type="password" name="password" placeholder="enter password" class="form-control" required>
+						<i class="zmdi zmdi-lock"></i>
+					</div>
+		
+
+					<button type="submit" name="submit" class="btn" >Register
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+					<br>
+					<p style="padding-left:25px;"> don't have an account? <a href="index.php">regiser now</a></p>
+				</form>
+			</div>
+		</div>
+		
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
