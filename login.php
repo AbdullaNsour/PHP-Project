@@ -84,7 +84,7 @@ if(isset($_POST['submit'])){
 						<i class="zmdi zmdi-arrow-right"></i>
 					</button>
 					<br>
-					<p style="padding-left:25px;"> don't have an account? <a href="index.php">regiser now</a></p>
+					<p style="padding-left:25px;"> don't have an account? <a href="register.php">regiser now</a></p>
 				</form>
 			</div>
 		</div>
