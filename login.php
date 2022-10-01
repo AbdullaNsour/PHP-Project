@@ -1,7 +1,15 @@
 <?php
-
-include 'config.php';
 session_start();
+include 'config.php';
+
+
+
+
+
+
+
+
+
 
 if(isset($_POST['submit'])){
 
@@ -9,11 +17,19 @@ if(isset($_POST['submit'])){
    $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
 
    $select = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email' AND password = '$pass'") or die('query failed');
+   $row = mysqli_fetch_assoc($select);
 
-   if(mysqli_num_rows($select) > 0){
-      $row = mysqli_fetch_assoc($select);
+
+
+   if(mysqli_num_rows($select) > 0  && $row['role'] == 'user' ){
+    //   $row = mysqli_fetch_assoc($select);
       $_SESSION['id'] = $row['id'];
       header('location:home.php');
+	  
+   }elseif(mysqli_num_rows($select) > 0  && $row['role'] == 'admin' ){
+    //   $row = mysqli_fetch_assoc($select);
+      $_SESSION['id'] = $row['id'];
+      header('location:admin.php');
    }else{
       $message[] = 'incorrect email or password!';
    }
